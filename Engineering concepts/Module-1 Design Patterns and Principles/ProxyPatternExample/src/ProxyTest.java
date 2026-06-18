@@ -1,0 +1,1 @@
+public class ProxyTest{public static void main(String[] a){Image i=new ProxyImage("img.jpg"); i.display(); i.display();}}

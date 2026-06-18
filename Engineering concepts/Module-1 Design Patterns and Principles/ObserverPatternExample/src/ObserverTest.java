@@ -1,0 +1,1 @@
+public class ObserverTest{public static void main(String[] a){StockMarket s=new StockMarket(); s.register(new MobileApp()); s.setPrice(150);}}

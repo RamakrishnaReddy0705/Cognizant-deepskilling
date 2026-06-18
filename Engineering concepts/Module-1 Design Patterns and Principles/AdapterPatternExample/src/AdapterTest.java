@@ -1,0 +1,1 @@
+public class AdapterTest{public static void main(String[] args){PaymentProcessor p=new PayPalAdapter(); p.processPayment(1000);}}

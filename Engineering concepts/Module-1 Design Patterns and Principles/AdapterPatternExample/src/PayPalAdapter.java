@@ -1,0 +1,1 @@
+public class PayPalAdapter implements PaymentProcessor{private PayPalGateway g=new PayPalGateway(); public void processPayment(double amount){g.makePayment(amount);}}

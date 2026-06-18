@@ -1,0 +1,1 @@
+public interface Stock{void register(Observer o); void notifyObservers();}
