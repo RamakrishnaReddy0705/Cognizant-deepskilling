@@ -1,1 +1,0 @@
-public class CreditCardPayment implements PaymentStrategy{public void pay(int a){System.out.println("Credit Card: "+a);}}

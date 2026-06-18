@@ -1,1 +1,0 @@
-public class StudentView{public void displayStudentDetails(String n){System.out.println("Student: "+n);}}

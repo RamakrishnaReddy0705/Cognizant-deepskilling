@@ -1,1 +1,0 @@
-public class StrategyTest{public static void main(String[] a){new PaymentContext(new CreditCardPayment()).execute(500);}}

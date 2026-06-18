@@ -1,1 +1,0 @@
-public class MVCTest{public static void main(String[] a){Student s=new Student("Ram"); new StudentController(s,new StudentView()).updateView();}}

@@ -1,1 +1,0 @@
-public class DecoratorTest{public static void main(String[] a){Notifier n=new SMSNotifierDecorator(new EmailNotifier()); n.send();}}
