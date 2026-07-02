@@ -3,9 +3,11 @@ package com.example.LibraryManagement.entity;
 import javax.annotation.processing.Generated;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Book {
+    @Id
     private Long id;
     private String title;
     private String author;
