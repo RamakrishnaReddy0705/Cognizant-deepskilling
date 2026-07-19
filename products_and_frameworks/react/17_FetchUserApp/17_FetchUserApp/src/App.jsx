@@ -1,0 +1,12 @@
+import Getuser from './Getuser';
+
+function App() {
+  return (
+    <div>
+      <h1>Fetch User App</h1>
+      <Getuser />
+    </div>
+  );
+}
+
+export default App;

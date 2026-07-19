@@ -1,22 +1,32 @@
 import styles from './CohortDetails.module.css';
 
 function CohortDetails({ cohort }) {
-  const titleClass = cohort.status === 'ongoing' ? styles.ongoing : styles.completed;
-
-  return (
+  return(
+    <>
     <div className={styles.box}>
-      <h3 className={titleClass}>{cohort.name}</h3>
-      <dl>
-        <dt>Trainer</dt>
-        <dd>{cohort.trainer}</dd>
-        <dt>Start Date</dt>
-        <dd>{cohort.startDate}</dd>
-        <dt>End Date</dt>
-        <dd>{cohort.endDate}</dd>
-        <dt>Status</dt>
-        <dd>{cohort.status}</dd>
-      </dl>
-    </div>
+    <h3 className={cohort.current_status==="ongoing"?styles.ongoing:styles.completed}>{cohort.name}</h3>
+     <dl>
+      <dt>started_on</dt>
+      <dd>
+        {cohort.started_on}
+      </dd>
+      <dt>current_status</dt>
+      <dd>
+        {cohort.current_status}
+      </dd>
+      <dt>coach</dt>
+      <dd>
+        {cohort.coach}
+      </dd>
+      <dt>trainer</dt>
+      <dd>
+        {cohort.trainer}
+      </dd>
+
+  
+     </dl>
+     </div>
+    </>
   );
 }
 
