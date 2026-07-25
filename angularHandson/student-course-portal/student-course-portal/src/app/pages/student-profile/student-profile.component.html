@@ -1,0 +1,13 @@
+<h2>Student Profile</h2>
+<p>Name: Aisha Khan</p>
+<p>Email: aisha.khan@example.com</p>
+
+<h3>Enrolled Courses</h3>
+<ul *ngIf="(enrolledCourses$ | async)?.length; else noneEnrolled">
+  <li *ngFor="let course of enrolledCourses$ | async">
+    {{ course.name }} ({{ course.code }})
+  </li>
+</ul>
+<ng-template #noneEnrolled>
+  <p>You are not enrolled in any courses yet. Visit the Courses page to enroll.</p>
+</ng-template>

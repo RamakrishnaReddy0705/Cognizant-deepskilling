@@ -1,0 +1,16 @@
+<a routerLink="/courses">&larr; Back to courses</a>
+
+<ng-container *ngIf="course$ | async as course">
+  <h2>{{ course.name }}</h2>
+  <p>Code: {{ course.code }}</p>
+  <p>Credits: {{ course.credits }}</p>
+  <p>Status: {{ course.gradeStatus }}</p>
+</ng-container>
+
+<h3>Enrolled Students</h3>
+<ul *ngIf="(enrolledStudents$ | async)?.length; else noStudents">
+  <li *ngFor="let student of enrolledStudents$ | async">{{ student }}</li>
+</ul>
+<ng-template #noStudents>
+  <p>No students enrolled yet.</p>
+</ng-template>

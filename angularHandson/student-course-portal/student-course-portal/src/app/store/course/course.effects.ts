@@ -1,0 +1,26 @@
+import { Injectable, inject } from '@angular/core';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { switchMap, map, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { CourseService } from '../../services/course.service';
+import { loadCourses, loadCoursesSuccess, loadCoursesFailure } from './course.actions';
+
+// Effects are the only place in NgRx where side effects (HTTP calls, navigation) belong.
+// Reducers must stay pure.
+@Injectable()
+export class CourseEffects {
+  private actions$ = inject(Actions);
+  private courseService = inject(CourseService);
+
+  loadCourses$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadCourses),
+      switchMap(() =>
+        this.courseService.getCourses().pipe(
+          map((courses) => loadCoursesSuccess({ courses })),
+          catchError((error) => of(loadCoursesFailure({ error: error.message })))
+        )
+      )
+    )
+  );
+}

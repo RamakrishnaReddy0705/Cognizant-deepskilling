@@ -1,0 +1,19 @@
+Hands-On 1, Task 1 - File Purpose Notes
+=========================================
+angular.json        -> Angular CLI workspace config: build targets, options, file paths, budgets.
+tsconfig.json        -> Root TypeScript compiler config shared across app and tests (strict mode, target, lib).
+tsconfig.app.json    -> TypeScript config specifically for the browser application build (extends tsconfig.json).
+package.json         -> Lists npm dependencies/devDependencies and defines CLI scripts (start, build, test).
+src/main.ts          -> Application entry point; bootstraps the standalone root AppComponent with appConfig.
+src/app/app.config.ts-> Standalone equivalent of app.module.ts; registers providers (router, http, store, etc).
+src/app/app.component.ts -> Root component; hosts <app-header> and <router-outlet> for the whole SPA shell.
+src/index.html       -> The single HTML page Angular bootstraps into; contains the <app-root> host element.
+
+Notes on angular.json budgets (architect > build > configurations > production):
+  maximumWarning: 500kB  -> CLI prints a build warning if the initial bundle exceeds this size.
+  maximumError: 1MB      -> CLI FAILS the production build if the initial bundle exceeds this size.
+  These guardrails stop the app from silently shipping huge bundles to production.
+
+Angular 20 uses standalone components by default (no NgModules needed for bootstrapping).
+This project therefore has app.config.ts + app.routes.ts instead of app.module.ts + app-routing.module.ts,
+per the Hands-On 1 hint about the modern standalone API.
